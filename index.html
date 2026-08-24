@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I'm Truly Sorry ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.25), transparent 25%),
+                radial-gradient(circle at 85% 80%, rgba(255, 174, 205, 0.35), transparent 30%),
+                linear-gradient(135deg, #4d194d, #8f315e 45%, #d76d8b 100%);
+        }
+
+        /* Background glow */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+
+            background:
+                radial-gradient(circle at 30% 70%, rgba(255,255,255,.12), transparent 30%),
+                radial-gradient(circle at 70% 20%, rgba(255,190,215,.15), transparent 35%);
+
+            z-index: -1;
+        }
+
+        /* Floating hearts */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 20px;
+            opacity: 0;
+            animation: floatHeart linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 8%;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(2) {
+            left: 20%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(3) {
+            left: 35%;
+            animation-duration: 8s;
+            animation-delay: 5s;
+        }
+
+        .heart:nth-child(4) {
+            left: 50%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(5) {
+            left: 68%;
+            animation-duration: 10s;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(6) {
+            left: 82%;
+            animation-duration: 13s;
+            animation-delay: 6s;
+        }
+
+        .heart:nth-child(7) {
+            left: 92%;
+            animation-duration: 9s;
+            animation-delay: 7s;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: .6;
+            }
+
+            50% {
+                transform: translateY(-50vh) rotate(180deg);
+                opacity: .8;
+            }
+
+            100% {
+                transform: translateY(-115vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+        .page {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 25px;
+            z-index: 1;
+        }
+
+        .container {
+            width: min(1150px, 100%);
+            min-height: 650px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 35px;
+            overflow: hidden;
+
+            background: rgba(255,255,255,.10);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 30px 80px rgba(30, 0, 25, .35),
+                inset 0 1px 1px rgba(255,255,255,.2);
+
+            animation: pageAppear 1.2s ease;
+        }
+
+        @keyframes pageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Image section */
+        .image-section {
+            position: relative;
+            min-height: 650px;
+            overflow: hidden;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .image-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    rgba(77,25,77,.05),
+                    rgba(77,25,77,.1)
+                );
+
+            z-index: 1;
+        }
+
+        /*
+        Change this URL to your own image.
+
+        Example:
+        background-image: url("images/her-photo.jpg");
+        */
+        .lady-image {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                z-index: 0;
+        }
+
+        .lady-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+                transform: scale(1.02);
+                transition: transform 8s ease;
+            }
+
+/* Dark romantic overlay */
+.lady-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(77, 25, 77, 0.78),
+        rgba(77, 25, 77, 0.08) 65%
+    );
+    z-index: 1;
+}
+
+.container:hover .lady-image img {
+    transform: scale(1.08);
+}
+
+        .container:hover .lady-image {
+            transform: scale(1.08);
+        }
+
+        .image-caption {
+            position: relative;
+            z-index: 3;
+
+            width: 100%;
+            padding: 40px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                to top,
+                rgba(45, 10, 40, .75),
+                transparent
+            );
+        }
+
+        .image-caption h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(35px, 5vw, 60px);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .image-caption p {
+            font-size: 14px;
+            opacity: .85;
+            letter-spacing: 2px;
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            padding: 70px 55px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .small-title {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 11px;
+            color: #ffd7e4;
+            margin-bottom: 15px;
+        }
+
+        .content h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 6vw, 90px);
+            line-height: .9;
+            font-weight: 600;
+            margin-bottom: 25px;
+
+            background: linear-gradient(
+                120deg,
+                #fff,
+                #ffd8e6
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: rgba(255,255,255,.7);
+            margin-bottom: 25px;
+        }
+
+        .message {
+            color: rgba(255,255,255,.9);
+            font-size: 15px;
+            line-height: 2;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            padding: 20px 25px;
+            margin: 10px 0 30px;
+
+            border-left: 2px solid rgba(255,255,255,.7);
+
+            background: rgba(255,255,255,.07);
+            border-radius: 0 15px 15px 0;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 23px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        /* Button */
+        .forgive-btn {
+            align-self: flex-start;
+
+            border: none;
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            color: #6d234c;
+            background: #fff;
+
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                background .3s ease;
+        }
+
+        .forgive-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.3);
+            background: #ffe4ed;
+        }
+
+        .forgive-btn:active {
+            transform: scale(.96);
+        }
+
+        /* Hidden response */
+        .response {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+
+            transition:
+                max-height .8s ease,
+                opacity .8s ease,
+                margin .8s ease;
+        }
+
+        .response.show {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 30px;
+        }
+
+        .response-inner {
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.2);
+
+            text-align: center;
+        }
+
+        .response-inner span {
+            font-size: 35px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .response-inner h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .response-inner p {
+            font-size: 13px;
+            opacity: .85;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .signature {
+            margin-top: 30px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            color: #ffd9e5;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .image-section {
+                min-height: 520px;
+            }
+
+            .content {
+                padding: 60px 45px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .page {
+                padding: 15px;
+            }
+
+            .container {
+                border-radius: 25px;
+                min-height: auto;
+            }
+
+            .image-section {
+                min-height: 420px;
+            }
+
+            .content {
+                padding: 45px 28px;
+            }
+
+            .content h1 {
+                font-size: 62px;
+            }
+
+            .message {
+                font-size: 14px;
+                line-height: 1.9;
+            }
+
+            .quote {
+                font-size: 21px;
+            }
+
+            .image-caption {
+                padding: 30px 20px;
+            }
+
+            .forgive-btn {
+                width: 100%;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 380px) {
+            .image-section {
+                min-height: 360px;
+            }
+
+            .content h1 {
+                font-size: 52px;
+            }
+
+            .content {
+                padding: 40px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="hearts">
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+        <div class="heart">♡</div>
+        <div class="heart">♥</div>
+        <div class="heart">♡</div>
+    </div>
+
+
+    <main class="page">
+
+        <section class="container">
+
+            <!-- IMAGE -->
+            <div class="image-section">
+
+                <div class="lady-image">
+                    <img src="picpink.jpg" alt="For You">
+                </div>
+
+                <div class="image-caption">
+                    <h2>For You</h2>
+                    <p>WITH ALL MY HEART</p>
+                </div>
+
+            </div>
+
+
+            <!-- APOLOGY -->
+            <div class="content">
+
+                <div class="small-title">
+                    A message from my heart
+                </div>
+
+                <h1>
+                    I'm<br>
+                    Sorry.
+                </h1>
+
+                <div class="divider"></div>
+
+                <p class="message">
+                    I know that saying “I'm sorry” cannot erase what happened,
+                    but I hope these words can help you understand how deeply
+                    I regret hurting you.
+                </p>
+
+                <p class="message">
+                    You mean more to me than I sometimes know how to express.
+                    If my words or actions caused you pain, please know that
+                    it was never my intention to make you feel that way.
+                </p>
+
+                <div class="quote">
+                    “Sometimes the people we love deserve more
+                    than an apology — they deserve our actions to
+                    prove that we truly mean it.”
+                </div>
+
+                <button class="forgive-btn" onclick="showForgiveness()">
+                    I'm Truly Sorry ❤️
+                </button>
+
+
+                <!-- RESPONSE -->
+                <div class="response" id="response">
+
+                    <div class="response-inner">
+
+                        <span>💗</span>
+
+                        <h3>
+                            Can You Forgive Me?
+                        </h3>
+
+                        <p>
+                            I don't expect everything to become perfect
+                            instantly. I only hope you can find it in your
+                            heart to forgive me and allow me to make things
+                            right.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="signature">
+                    With love, always. ❤️
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function showForgiveness() {
+
+            const response = document.getElementById("response");
+
+            response.classList.toggle("show");
+
+            const button = document.querySelector(".forgive-btn");
+
+            if (response.classList.contains("show")) {
+
+                button.innerHTML = "Thank You for Listening ❤️";
+
+                // Create extra hearts
+                createHearts();
+
+            } else {
+
+                button.innerHTML = "I'm Truly Sorry ❤️";
+
+            }
+        }
+
+
+        function createHearts() {
+
+            for (let i = 0; i < 12; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.innerHTML = "♥";
+
+                heart.style.position = "fixed";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.bottom = "-30px";
+                heart.style.fontSize = (15 + Math.random() * 25) + "px";
+                heart.style.zIndex = "999";
+                heart.style.pointerEvents = "none";
+                heart.style.transition = "transform 4s ease, opacity 4s ease";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+
+                    heart.style.transform =
+                        `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`;
+
+                    heart.style.opacity = "0";
+
+                }, 100);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4500);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
